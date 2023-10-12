@@ -12,8 +12,30 @@ const rl = readline.createInterface({
 });
 
 // the function that will be called by the unit test below
-const rockPaperScissors = (hand1, hand2) => {
+// function forceLower() 
+// {
+// strInput.value=strInput.value.toLowerCase();
+// }
+// //make lowercase
+// myinput.value = myinput.value.toString().toLowerCase();
+// //remove spaces (if you want)
+// myinput.value = myinput.value.toString().replace(' ', '');​
 
+const rockPaperScissors = (handOne, handTwo) => {
+  
+   let hand1 = handOne.toLowerCase().trim();
+   let hand2 = handTwo.toLowerCase().trim();
+
+  if (hand1 === hand2) {
+    return "It's a tie!"
+  } else if ((hand1 === 'rock' && hand2 === 'scissors') 
+     || (hand1 === 'paper' && hand2 === 'rock')
+     || (hand1 === 'scissors' && hand2 === 'paper')) {
+    return "Hand one wins!"
+  } else if ((hand2 === 'rock' && hand1 === 'scissors')
+    || (hand2 === 'paper' && hand1 === 'rock')
+    || (hand2 === 'scissors' && hand1 === 'paper'))
+    return "Hand two wins!"
   // Write code here
   // Use the unit test to see what is expected
 
